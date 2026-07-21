@@ -27,7 +27,7 @@ admin.initializeApp({
 // 允许跨域
 // 处理跨域，必须放在所有路由之前
 app.use(cors({
-  origin: 'https://你的前端域名.vercel.app',  // 替换成你的 Vercel 域名
+  origin: 'https://pod-frontend-five.vercel.app',  // 替换成你的 Vercel 域名
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
