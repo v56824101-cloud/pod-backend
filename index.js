@@ -25,7 +25,16 @@ admin.initializeApp({
 });
 
 // 允许跨域
-app.use(cors());
+// 处理跨域，必须放在所有路由之前
+app.use(cors({
+  origin: 'https://你的前端域名.vercel.app',  // 替换成你的 Vercel 域名
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
+// 显式处理预检请求（OPTIONS）
+app.options('*', cors());
 app.use(express.json());
 
 app.get('/', (req, res) => res.send('POD Backend is running!'));
