@@ -24,7 +24,6 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
-// 允许跨域
 // 处理跨域，必须放在所有路由之前
 app.use(cors({
   origin: 'https://pod-frontend-five.vercel.app',  // 替换成你的 Vercel 域名
