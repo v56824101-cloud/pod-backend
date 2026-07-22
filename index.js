@@ -25,12 +25,14 @@ admin.initializeApp({
 });
 
 // 处理跨域，必须放在所有路由之前
+const app = express();
 app.use(cors({
   origin: 'https://pod-frontend-five.vercel.app',  // 替换成你的 Vercel 域名
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+app.use(express.json());
 
 // 显式处理预检请求（OPTIONS）
 app.options('*', cors());
